@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "PerfilMatch AI",
   description: "Analiza tu CV y vacante para optimizar tu perfil profesional",
+  icons: {
+    icon: "/Favicon-PerfilMatchAI.png",
+  },
 };
 
 export default function RootLayout({
