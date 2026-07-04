@@ -74,3 +74,82 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .liquid-background {
+    background:
+      linear-gradient(135deg, rgba(240, 253, 250, 0.94) 0%, rgba(248, 250, 252, 0.96) 34%, rgba(239, 246, 255, 0.92) 100%),
+      linear-gradient(115deg, rgba(20, 184, 166, 0.18), transparent 36%, rgba(234, 179, 8, 0.12) 72%, transparent),
+      linear-gradient(70deg, transparent 0%, rgba(14, 165, 233, 0.12) 44%, transparent 78%);
+  }
+
+  .glass-panel {
+    position: relative;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(26px) saturate(1.28);
+    -webkit-backdrop-filter: blur(26px) saturate(1.28);
+  }
+
+  .glass-panel::before {
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.18) 42%, rgba(255, 255, 255, 0.48));
+    border-radius: inherit;
+    content: "";
+    inset: 1px;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .glass-panel > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .glass-tile {
+    border: 1px solid rgba(255, 255, 255, 0.56);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.48);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 18px 48px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(20px) saturate(1.18);
+    -webkit-backdrop-filter: blur(20px) saturate(1.18);
+  }
+
+  .glass-chip {
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    background: rgba(255, 255, 255, 0.56);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 10px 28px rgba(15, 23, 42, 0.08);
+    color: rgb(15 23 42);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  }
+
+  .glass-icon {
+    align-items: center;
+    border: 1px solid rgba(125, 211, 252, 0.45);
+    border-radius: 1rem;
+    background: rgba(236, 254, 255, 0.68);
+    color: rgb(14 116 144);
+    display: inline-flex;
+    height: 3.25rem;
+    justify-content: center;
+    width: 3.25rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 14px 36px rgba(14, 116, 144, 0.12);
+    backdrop-filter: blur(18px) saturate(1.22);
+    -webkit-backdrop-filter: blur(18px) saturate(1.22);
+  }
+
+  .logo-glass-frame {
+    align-items: center;
+    aspect-ratio: 1;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 28px 90px rgba(15, 23, 42, 0.13);
+    display: flex;
+    justify-content: center;
+    max-width: 20rem;
+    padding: 2.25rem;
+    width: min(72vw, 20rem);
+    backdrop-filter: blur(28px) saturate(1.22);
+    -webkit-backdrop-filter: blur(28px) saturate(1.22);
+  }
+}
