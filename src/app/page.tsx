@@ -403,8 +403,9 @@ export default function Home() {
           )}
         </main>
 
-        <footer className="border-t border-white/50 py-7 text-center text-sm text-slate-600">
-          PerfilMatch AI - Potenciado por inteligencia artificial
+        <footer className="border-t border-white/50 py-7 text-center text-sm text-slate-600 space-y-2">
+          <p>PerfilMatch AI - Potenciado por inteligencia artificial</p>
+          <p>© {new Date().getFullYear()} PerfilMatch AI. Todos los derechos reservados.</p>
         </footer>
       </div>
     </div>
