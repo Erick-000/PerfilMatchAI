@@ -24,9 +24,9 @@ export async function POST(request: NextRequest) {
     }
 
     const prompt = `
-Analiza la siguiente hoja de vida y descripción de vacante. Devuelve un JSON con la siguiente estructura (sin texto adicional, solo el JSON):
+Analiza la siguiente hoja de vida y descripción de vacante. Devuelve UNICAMENTE un JSON con la siguiente estructura, sin texto adicional:
 {
-  "matchScore": número entre 0 y 100,
+  "matchScore": número entre 0 y 100 (calcula basado en la coincidencia de habilidades y experiencia requerida vs la del CV),
   "matchingSkills": ["habilidad 1", "habilidad 2", ...],
   "missingSkills": ["habilidad 1", "habilidad 2", ...],
   "recommendations": ["recomendación 1", "recomendación 2", ...],
@@ -43,7 +43,8 @@ ${jobDescription}
     const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
-      temperature: 0.7,
+      temperature: 0.2,
+      seed: 42,
     });
 
     const content = completion.choices[0]?.message?.content;
