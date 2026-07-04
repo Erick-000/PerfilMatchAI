@@ -128,3 +128,9 @@ public/
 ## Estado del Proyecto
 
 Proyecto inicial funcional para analizar CVs contra vacantes y presentar resultados estructurados con IA.
+
+## Licencia
+
+© 2024 PerfilMatch AI. Todos los derechos reservados.
+
+El código fuente y contenido de este repositorio son propiedad exclusiva. No se permite la reproducción total o parcial, distribución o modificación sin autorización previa y por escrito.
