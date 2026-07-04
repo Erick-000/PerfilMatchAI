@@ -16,7 +16,7 @@ El objetivo es ayudar a personas en busqueda de empleo a presentar mejor su perf
 - Recomendaciones accionables para mejorar la postulacion.
 - Resumen profesional optimizado para la vacante.
 - Botones para copiar resultados rapidamente.
-- Interfaz responsive construida con Tailwind CSS y componentes tipo shadcn/ui.
+- Interfaz responsive construida con Tailwind CSS y shadcn/ui.
 
 ## Vista General
 
@@ -34,6 +34,7 @@ El flujo principal es simple:
 - React 18
 - TypeScript
 - Tailwind CSS
+- shadcn/ui (https://ui.shadcn.com/docs/installation)
 - React Hook Form
 - Zod
 - OpenAI API

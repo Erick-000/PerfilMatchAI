@@ -54,8 +54,23 @@ ${jobDescription}
     const result = JSON.parse(content.trim());
 
     return NextResponse.json(result);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error en la API:', error);
+    
+    if (error.code === 'insufficient_quota' || error.status === 429) {
+      return NextResponse.json(
+        { error: 'Tu API key de OpenAI excedió el límite de créditos o cuota. Por favor revisa tu plan en https://platform.openai.com/usage.' },
+        { status: 402 }
+      );
+    }
+
+    if (error.code === 'invalid_api_key' || error.status === 401) {
+      return NextResponse.json(
+        { error: 'La API key de OpenAI es incorrecta o inválida. Por favor revisa tu clave en https://platform.openai.com/account/api-keys.' },
+        { status: 401 }
+      );
+    }
+    
     return NextResponse.json(
       { error: 'Ocurrió un error al analizar el CV. Por favor intenta nuevamente.' },
       { status: 500 }
